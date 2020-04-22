@@ -439,8 +439,8 @@ h5 {
 	background: rgba(255, 114, 0, 0.6);
 }
 
-.html5 {
-	width: 95%;
+.htmlcss {
+	width: 90%;
 	-moz-animation: html 2s ease;
 	-webkit-animation: html 2s ease;
 }
@@ -454,8 +454,8 @@ h5 {
 	100% { width: 95%;  }
 }
 
-.css {
-	width: 85%;
+.python {
+	width: 70%;
 	-moz-animation: css 2s ease;
 	-webkit-animation: css 2s ease;
 }
@@ -469,8 +469,8 @@ h5 {
 	100% { width: 85%;  }
 }
 
-.java {
-	width: 70%;
+.c {
+	width: 50%;
 	-moz-animation: java 2s ease;
 	-webkit-animation: java 2s ease;
 }
@@ -485,7 +485,7 @@ h5 {
 }
 
 .javascript {
-	width: 60%;
+	width: 50%;
 	-moz-animation: javascript 2s ease;
 	-webkit-animation: javascript 2s ease;
 }
@@ -514,8 +514,8 @@ h5 {
 	100% { width: 35%;  }
 }
 
-.autodesk {
-	width: 90%;
+.php {
+	width: 70%;
 	-moz-animation: autodesk 2s ease;
 	-webkit-animation: autodesk 2s ease;
 }
@@ -529,8 +529,8 @@ h5 {
 	100% { width: 90%;  }
 }
 
-.soldering {
-	width: 90%;
+.java {
+	width: 50%;
 	-moz-animation: soldering 2s ease;
 	-webkit-animation: soldering 2s ease;
 }
@@ -635,7 +635,7 @@ h5 {
 }
 
 
-.bootstrap {
+.raspberrypi {
 	width: 70%;
 	-moz-animation: bootstrap 2s ease;
 	-webkit-animation: bootstrap 2s ease;
@@ -650,9 +650,62 @@ h5 {
 	100% { width: 70%;  }
 }
 
+.embeddedcircuit {
+	width: 80%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
 
-.android {
-	width: 65%;
+.embeddedsystems {
+	width: 50%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.internetofthings {
+	width: 70%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.servers {
+	width: 40%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.webapplicationdevelopment {
+	width: 70%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.androiddevelopment {
+	width: 50%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.dataanalytics {
+	width: 40%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.datavisualization {
+	width: 40%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.robotics {
+	width: 70%;
+	-moz-animation: android 2s ease;
+	-webkit-animation: android 2s ease;
+}
+
+.nativeapplicationdevelopment {
+	width: 55%;
 	-moz-animation: android 2s ease;
 	-webkit-animation: android 2s ease;
 }
