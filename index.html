@@ -1,944 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <script type="text/javascript">
-        if (document.addEventListener) { // IE >= 9; other browsers
-            document.addEventListener('contextmenu', function (e) {
-                //alert("You've tried to open context menu"); //here you draw your own menu
-                e.preventDefault();
-            }, false);
-        } else { // IE < 9
-            document.attachEvent('oncontextmenu', function () {
-                //alert("You've tried to open context menu");
-                //window.event.returnValue = false;
-            });
-        }
-    </script>
-    <meta charset="utf-8">
-    <meta name="language" content="english">
-    <meta http-equiv="content-type" content="text/html">
-    <meta name="author" content="Aniket Katkar">
-    <meta name="designer" content="Aniket Katkar">
-    <meta name="publisher" content="Aniket Katkar">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations</title>
+<meta name="description" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta name="author" content="Aniket Katkar" />
+<meta name="keywords" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta property="og:title" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta property="og:description" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourwebsite.com/" />
+<meta property="og:site_name" content="Aniket Katkar Portfolio" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta name="twitter:description" content="Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations" />
+<meta name="twitter:creator" content="@aniketkatkarz" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "author": {
+    "@type": "Person",
+    "name": "Aniket Katkar",
+    "url": "https://aniketkatkar.github.io/"
+  },
+  "description": "Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations",
+  "headline": "Aniket Katkar | Embedded Systems, Python Magic, and Creative Innovations",
+  "name": "Aniket Katkar Portfolio",
+  "url": "https://aniketkatkar.github.io/"
+}
+</script>
 
-    <title>Aniket Katkar</title>
+   <!-- Load Fonts -->
+   <link
+      href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic'
+      rel='stylesheet'>
+   <!-- Load CSS -->
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/ionicons.css" />
+   <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+   <link rel="stylesheet" href="assets/css/animate.css" />
+   <link rel="stylesheet" href="assets/css/owl.carousel.css" />
+   <link rel="stylesheet" href="assets/css/syntax.css" />
 
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
-    <meta name="description"
-        content="Hi, I'm Aniket Katkar. I am an Engineer, Developer, Tinkerer, and Student. I mainly work with Embedded Systems Development and Android Application Development.">
-    <meta name="keywords"
-        content="Aniket, Katkar, Engineer, Developer, Student, Embedded, Hardware, Android, Programming, Web">
-    <meta name=”robots” content="index,follow">
-    <meta name="revisit-after" content="7 days">
-    <!-- <meta http-equiv="refresh" content="30"> -->
-    <meta name="robots" content="noodp">
+   <!-- Favicons -->
+   <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
+   <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+   <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link type="application/atom+xml" rel="alternate" href="feed.xml" title="Aniket Katkar" />
 
-    <meta name="distribution" content="web">
-    <meta name="web_author" content="Aniket Katkar">
-    <meta name="rating" content="general">
-    <meta name="subject" content="Personal">
-    <meta name="title" content="Aniket Katkar">
-    <meta name="copyright" content="Copyright 2020">
-    <meta name="reply-to" content="locked.ani@gmail.com">
-    <meta name="abstract"
-        content="Hi, I'm Aniket Katkar. I am an Engineer, Developer, Tinkerer, and Student. I mainly work with Embedded Systems Development and Android Application Development.">
-    <meta name="city" content="Mumbai | Pune">
-    <meta name="country" content="India">
-    <meta name="distribution" content="global">
-    <meta name="classification"
-        content="Hi, I'm Aniket Katkar. I am an Engineer, Developer, Tinkerer, and Student. I mainly work with Embedded Systems Development and Android Application Development.">
+   <style>
+      canvas {
+         position: fixed;
+         /* Fix the canvas in place */
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+         opacity: .6;
+         z-index: -1;
+         /* Put canvas behind other elements */
+      }
+   </style>
 
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="favicon.png" />
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" rel=stylesheet href="css/style.css">
-    <link type="text/css" rel=stylesheet href="css/animate.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ruda|Open+Sans" />
-
-    <!-- <script async src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script async src="js/navbar.js"></script>
-<script async src="js/bootstrap.min.js"></script>
-<script async src="js/jquery.easing.1.3.js"></script>
-<script async src="js/jquery.plusanchor.js"></script>
-<script async src="js/bootstrap-scrollspy.js"></script>
-
-<script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script async src="js/RevealOnScroll.js"></script> -->
-
-    <script src="./code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-
-    <script src="js/navbar.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.plusanchor.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-
-    <script src="./ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <script src="js/RevealOnScroll.js"></script>
-
-    <!-- <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-55159746-1', 'auto');
-        ga('require', 'displayfeatures');
-        ga('send', 'pageview');
-    </script> -->
 </head>
-
-
-<body>
-    <p style="visibility: hidden; margin: 0; height: 0;">Hi, I'm Aniket Katkar. I am an Engineer, Developer, Tinkerer,
-        and
-        Student. I mainly work with Embedded Systems Development and Android Application Development.</p>
-    <!-- Navigation -->
-    <div class="navbar navbar-custom navbar-fixed-top" id="header" data-scrollspy="scrollspy" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Aniket Katkar</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target=".navbar-responsive-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
+<canvas id="canvas"></canvas>
+<body class=" dark">
+   <!-- Container -->
+   <div class="container">
+      <!-- Header -->
+      <header>
+         <div class="head-top">
+         </div>
+      </header>
+      <!-- Wrapper -->
+      <div class="wrapper">
+         <!-- Started -->
+         <div class="section started align-center">
+            <div class="centrize full-width">
+               <div class="vertical-center">
+                  <div class="started-content">
+                     <div class="h-title glitch-effect " data-text="Aniket Katkar">Aniket Katkar</div>
+                     <div class="h-subtitle typing-subtitle">
+                        <p>Engineer.</p>
+                        <p>Located in Pune, India.</p>
+                        <p>Embedded Systems Testing and Python Automation.</p>
+                     </div>
+                     <span class="h-subtitle typed-subtitle"></span>
+                  </div>
+               </div>
             </div>
-            <div class="navbar-collapse navbar-responsive-collapse collapse bs-js-navbar-scrollspy navbar-right">
-                <ul class="nav navbar-nav navcolor">
-                    <li id="aboutnav"><a class="page-scroll" href="#about">About</a></li>
-                    <li id="skillnav"><a class="page-scroll" href="#skills">Skills</a></li>
-                    <li id="educationnav"><a class="page-scroll" href="#education">Experience</a></li>
-                    <li id="projectnav"><a class="page-scroll" href="#projects">Freelancing</a></li>
-                    <li id=""><a class="page-scroll" href="#extraprojects">Extra Projects</a></li>
-                    <li id="contactnav"><a class="page-scroll" href="#contact">Contact</a>
+            <a href="#" class="mouse_btn"><span class="ion ion-mouse"></span></a>
+         </div>
+         <!-- About -->
+         <div class="section about">
+            <div class="content">
+               <div class="title">
+                  <div class="title_inner">About Me</div>
+               </div>
+               <div class="image">
+                  <img src="assets/images/aniketkatkar.jpeg" alt="Profile Image" style="max-width: 100%; height: auto;" />
+               </div>
+               <div class="desc">
+                  <p><strong>Hello! I'm Aniket Katkar</strong>.<br />
+                     An engineer with extensive experience in embedded systems and python automation. Specializing in designing and developing innovative solutions, I excel at integrating and testing embedded systems while leveraging python to automate workflows and optimize performance. <br><br>
+                     Beyond my professional pursuits, I am deeply passionate about exploring new technological frontiers, such as AI, Robotics and that help intersection of technology with real-world applications. <br><br>As an astrophile, I find inspiration in the vastness of the universe, and my downtime often involves diving into anime, movies, reading books and tinkering with my Arduino boards. 
+                  </p>
+                  <div class="info-list">
+                     <ul>
+                     </ul>
+                  </div>
+                  <div class="button-list">
+                     <ul>
+                        <li>
+                           <div class="bts"><a target="_blank" href="aniket_katkar_resume_2025.pdf"
+                                 class="btn fill" data-text="Download CV">Download CV</a></div>
+                        </li>
+                        <li><a target="_blank" href="https://twitter.com/aniketkatkarz" title="Twitter" class="h-subtitle"><span
+                           class="ion ion-social-twitter"></span></a>
+                        </li>
+                        <li><a target="_blank" href="https://github.com/aniketkatkar" title="GitHub" class="h-subtitle"><span
+                           class="ion ion-social-github"></span></a>
+                        </li>
+                        <li><a target="_blank" href="https://in.linkedin.com/in/aniket-katkar" title="Linkedin" class="h-subtitle"><span
+                           class="ion ion-social-linkedin"></span></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear"></div>
+            </div>
+         </div>
+         <div class="clear"></div>
+         <!-- Resume -->
+         <div class="section resume">
+            <div class="content">
+               <div class="cols">
+                  <div class="col col-md">
+                     <div class="title">
+                        <div class="title_inner">Experience</div>
+                     </div>
+                     <div class="resume-items">
+                        <div class="resume-item active">
+                           <div class="date">12/2021 - present</div>
+                           <div class="name">
+                              <p>Senior Engineer, E-Infochips Pvt. Ltd.</p>
+                           </div>
+                           <p>
+                           <p><li>Executed comprehensive verification and validation of medical devices, ensuring adherence to FDA regulations and industry standards.</li>
+                              <li>Designed and implemented automated and manual test cases for embedded systems using tools like Python, MATLAB, and LabVIEW, enhancing product reliability.</li>
+                              <li>Collaborated with cross-functional teams to identify and resolve defects, supporting design validation protocols for improved performance and patient safety.</li></p>
+                           </p>
+                        </div>
+                        <div class="resume-item active">
+                           <div class="date">7/2021 - 12/2021</div>
+                           <div class="name">
+                              <p>Senior Engineer, L&T Infotech</p>
+                           </div>
+                           <p>
+                           <p><li>Conducted functional testing of in-cab display systems for agricultural tractors, ensuring seamless operation with equipment through CAN communication protocols.</li>
+                              <li>Developed and executed test cases using Python and Android tools to validate system performance and functionality.</li>
+                              <li>Identified and resolved software and hardware integration issues, enhancing system reliability in diverse operational environments.</li></p>
+                           </p>
+                        </div>
+                        <div class="resume-item active">
+                           <div class="date">6/2018 - 7/2021</div>
+                           <div class="name">
+                              <p>Quality Engineer, Ubisoft India Studios Pvt. Ltd.</p>
+                           </div>
+                           <p>
+                           <p><li>Designed and implemented build automation tools using Python to streamline game development pipelines.</li>
+                              <li>Developed web dashboards for project monitoring, enhancing workflow transparency and efficiency.</li>
+                              <li>Automated testing processes for mobile apps and games, improving quality assurance through robust scripting and frameworks.</li>
+                              <li>Created logging frameworks to simplify error tracking and debugging in live environments.</li>
+                              <li>Developed an end-to-end solution for mirroring Android devices in browsers, allowing access and control of Android phones within an intranet.</li>
+                            </ul></p>
+                           </p>
+                        </div>
+                        <div class="resume-item active">
+                           <div class="date">8/2016 - 3/2018</div>
+                           <div class="name">
+                              <p>Product Engineer, Ushva Clean Technologies Pvt Ltd.</p>
+                           </div>
+                           <p>
+                           <p>
+                              <li>Developed Intelligent Energy Management Systems (IEMS) to analyze real-time voltage, current, and authentication data, enabling secure and efficient communication with IBM Bluemix servers via MQTT.</li>
+                              <li>Engineered a Battery Monitoring System to transfer critical battery parameters to IBM Cloud for visualization on Android applications.</li>
+                              <li>Created monitoring devices with ESP32 and GSM modules for IIoT applications, delivering sensor data to web and mobile platforms for analysis.</li>
+                              <li>Built web and Android dashboards to display and analyze energy metrics, leveraging PHP, MySQL, IBM Watson, and Cloudant for real-time insights.</li>
+                            
+                            </p>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-md">
+                     <div class="title">
+                        <div class="title_inner">Education</div>
+                     </div>
+                     <div class="resume-items">
+                        <div class="resume-item">
+                           <div class="date">2016</div>
+                           <div class="name">
+                              <p>C-DAC, Pune (Embedded Systems Design) </p>
+                           </div>
+                           <p>
+                           <p><li>Completed a comprehensive PG Diploma in Embedded Systems Design from CDAC, focusing on microcontroller programming, RTOS, Embedded Linux, IoT, and real-time project development for industrial applications.</li></p>
+                           </p>
+                        </div>
+                        <div class="resume-item">
+                           <div class="date">2015</div>
+                           <div class="name">
+                              <p>Bachelors of Engineering (Electronics)</p>
+                           </div>
+                           <p>
+                           <p><li>University of Mumbai</li></p>
+                           </p>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Showreel -->
+         <div class="section about">
+            <div class="content">
+               <div class="title">
+                  <div class="title_inner">Pages</div>
+               </div>
+               <p>Some additional areas of my website for you to explore</p>
+               <div class="button-list">
+                  <ul>
+                     <li>
+                        <div class="bts"><a href="uses/index.html" class="btn" data-text="Uses">Uses</a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="clear"></div>
+            </div>
+         </div>
+         <!-- Service -->
+         <div class="section service">
+            <div class="content">
+               <div class="title">
+                  <div class="title_inner">Ask me about...</div>
+               </div>
+               <div class="service-items">
+                  <div class="service-item">
+                     <div class="icon"><span class="ion-android-share-alt"></span></div>
+                     <div class="name">Profylo.com</div>
+                     <p>
+                     <p>Profylo.com is a platform designed to simplify the process of creating and sharing personal portfolio websites. It allows users to build a sleek, professional one-page portfolio without needing any programming or web design skills. The platform is user-friendly and entirely web-based, meaning no software installation is required. Users only need a modern browser and an email account to start building their portfolios. - <a href="https://profylo.com">Link</a></p>
+                     </p>
+                  </div>
+                  <div class="service-item">
+                     <div class="icon"><span class="ion-android-desktop"></span></div>
+                     <div class="name">The Desk Project</div>
+                     <p>
+                     <p>The Macro Project is an open-source initiative focused on increasing productivity through customizable macro keyboards. It offers devices like the MacroPod series, which provide flexibility for tasks such as programming, gaming, and workflow automation. These keyboards feature open-source firmware, allowing users to create custom macros, remap keys, and enhance functionality.  - <a href="https://themacroproject.github.io">Link</a></p>
+                     </p>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+         <!-- Skills -->
+         <div class="section skills">
+            <div class="content">
+               <div class="title">
+                  <div class="title_inner">Knowledge</div>
+               </div>
+               <div class="skills list">
+                  <ul>
+                     <li>
+                        <div class="name">Embedded Systems and Operating Systems like RTOS, Linux</div>
+                    </li>
                     <li>
-                </ul>
+                        <div class="name">Python Development</div>
+                    </li>
+                    <li>
+                        <div class="name">BDD and TDD Test Frameworks like Pytest and Behave</div>
+                    </li>
+                    <li>
+                        <div class="name">Arduino & C Development</div>
+                    </li>
+                    <li>
+                        <div class="name">Test Verification and Validation</div>
+                    </li>
+                    <li>
+                        <div class="name">Good Electronics Knowledge & Protocols</div>
+                    </li>
+                    <li>
+                        <div class="name">Tools: Jira, Jama, Testrail, GIT, SVN</div>
+                    </li>
+                    <li>
+                        <div class="name">Web Technologies like PHP, HTML, CSS, Javascript</div>
+                    </li>
+                    <li>
+                        <div class="name">Methodologies: Scrum, Kanban, Waterfall</div>
+                    </li>
+                    <li>
+                        <div class="name">Sprint Planning, Reviews, & Retrospectives</div>
+                    </li>
+                    <li>
+                        <div class="name">High-Level Planning & Dependency Management</div>
+                    </li>
+                    <li>
+                        <div class="name">Quality Validation</div>
+                    </li>                    
+                  </ul>
+               </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Intro Section -->
-    <div id="panel1">
-        <div class="bannerPart">
-
-            <div class="canvas-wrap">
-                <div class="canvas-content">
-                </div>
-                <div id="canvas" class="gradient"></div>
+         </div>
+         <!-- Conacts Info -->
+         <div class="section contacts">
+            <div class="content">
+               <div class="title">
+                  <div class="title_inner">Get in Touch</div>
+               </div>
+               <div class="service-items">
+                  <div class="service-item">
+                     <div class="icon"><span class="ion ion-email"></span></div>
+                     <div class="name">Email aniketkatkarp ( at ) gmail.com</div>
+                     <p>
+                        Recruiter reaching out about roles? Or you simply want to chat? Feel free to email me!</a>
+                     </p>
+                  </div>
+               </div>
             </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer>
+         <div class="soc">
+            <a target="_blank" href="https://twitter.com/aniketkatkarz" title="Twitter"><span
+                  class="ion ion-social-twitter"></span></a>
+            <a target="_blank" href="https://github.com/aniketkatkar" title="GitHub"><span
+                  class="ion ion-social-github"></span></a>
+            <a target="_blank" href="https://in.linkedin.com/in/aniket-katkar" title="Linkedin"><span
+                  class="ion ion-social-linkedin"></span></a>
+         </div>
+         <div class="copy">© 2024 Made with &hearts; by Aniket Katkar. All rights reserved.</div>
+         <div class="clr"></div>
+      </footer>
 
-            <!--<section id="fbsection1">
-<div id="particles-js">
-<canvas width="1920" height="1080" style="width: 100%; height: 100%;"></canvas>
-</div>
-</section>-->
-            <!--<img alt="Aniket Katkar" class="bannerImg" src="images/code.png">-->
-        </div>
-        <a id="top" class="anchor"></a>
-        <div id="content">
-            <br>
-            <br>
-            <div class="wow bounceInDown" data-wow-duration="1s">
-                <h2>Aniket Katkar</h2>
-                <!-- <div class="wow pulse" data-wow-delay="2.5s"></div> -->
-            </div>
-            <br>
-            <div id="items">
-                <span class="wow fadeIn item_box" data-wow-delay="1s">
-                    <h3>Engineer</h3>
-                    <div class="tooltip1">
-                        <div class="developer">
-                            <span>en&#183;gin&#183;eer</span>
-                            <br>
-                            <span>A individual responsible for the design and creation of all man-made objects in the
-                                known
-                                universe
-                            </span>
-                        </div>
-                    </div>
-                </span>
-                <span class="wow fadeIn item_box" data-wow-delay="1.5s">
-                    <h3>Developer</h3>
-                    <div class="tooltip2">
-                        <div class="developer">
-                            <span>de&#183;vel&#183;op&#183;er</span>
-                            <br>
-                            <span>A hard-working person devoted to transforming dreams into tangible products</span>
-                        </div>
-                    </div>
-                </span>
-                <span class="wow fadeIn item_box" data-wow-delay="2s">
-                    <h3>Tinkerer</h3>
-                    <div class="tooltip3">
-                        <div class="developer">
-                            <span>Tinker&#183;er</span>
-                            <br>
-                            <span>A person skilled with the use of electronics who uses his talents to gain knowledge
-                                for
-                                the enjoyment of exploration by tinkering</span>
-                        </div>
-                    </div>
-                </span>
-                <span class="wow fadeIn item_box" data-wow-delay="2.5s">
-                    <h3>Student</h3>
-                    <div class="tooltip4">
-                        <div class="developer">
-                            <span>stu&#183;dent</span>
-                            <br>
-                            <span>A sleep deprived person who is constantly learning and reading new technologies</span>
-                        </div>
-                    </div>
-                </span>
-            </div>
-            <div class="wow bounceInUp" data-wow-delay="3s" data-wow-duration="1s">
-                <a href="#about" class="btn btn-circle page-scroll">
-                    <i class="fa fa-angle-double-down animated"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+   </div>
+   <!-- Plugins -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.magnific-popup.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.js"></script>
+   <script src="assets/js/isotope.pkgd.js"></script>
+   <script src="assets/js/owl.carousel.js"></script>
+   <script src="assets/js/regl.min.js"></script>
+   <script src="assets/js/typed.js"></script>
+   <script src="assets/js/rrssb.js"></script>
+   <script src="assets/js/simple-jekyll-search.js"></script>
+   <!-- Main -->
+   <script src="assets/js/glitche-scripts.js"></script>
+   <script>
+      function Particles() {
+         //particle colors
+         this.colors = [
+            '255, 255, 255',
+            '255, 99, 71',
+            '129, 129, 19'
+         ]
+         //adds gradient to particles on true
+         this.blurry = false;
+         //adds white border
+         this.border = false;
+         //particle radius min/max
+         this.minRadius = 20;
+         this.maxRadius = 35;
+         //particle opacity min/max
+         this.minOpacity = .05;
+         this.maxOpacity = .7;
+         //particle speed min/max
+         this.minSpeed = .1;
+         this.maxSpeed = .5;
+         //frames per second 
+         this.fps = 60;
+         //number of particles
+         this.numParticles = 750;
+         //required canvas variables
+         this.canvas = document.getElementById('canvas');
+         this.ctx = this.canvas.getContext('2d');
+      }
 
-    <!-- About Me Section -->
-    <div class="about-container" id="about">
-        <br>
-        <br>
-        <div class="container">
-            <div class=" zoomInDown">
-                <h1 class="aboutme-header">About Me</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="red-divider">
-            </div>
-            <br>
-            <div class=" fadeIn" data-wow-duration="3s">
-                <div class="center">
-                    <img alt="Aniket Katkar" class="me" src="images/aniketkatkar.jpg">
-                </div>
-            </div>
-            <br>
-            <br>
-            <!--<div class=" zoomIn">
-<p class="about-info">An Electronics Engineer by education, I also completed Embedded Systems course from <span class ="link"><a target="_blank" href="https://cdac.in/">Centre for Development of Advanced Computing(C-DAC)</a></span>.</p>
-</div>-->
-            <br>
-            <br>
-            <div class=" zoomIn">
-                <p class="about-info">I am passionate about Embedded systems, Open source and Internet of
-                    Things. I feel this is an ideal combination of technology and human necessity leading to most perfect
-                    application oriented field. I love to binge Anime and sitcoms, basically an <a target="_blank" href="https://en.wikipedia.org/wiki/Otaku">Otaku</a>! Also, a Amatuer photographer. Totally a <a target="_blank" href="https://en.wiktionary.org/wiki/ailurophile">Ailurophile</a>. I love to create
-                    things and products, may it be code or hardware. </p>
-            </div>
-            <br>
-            <br>
-        </div>
+      /**
+       * Initializes everything
+       * @method init
+       */
+      Particles.prototype.init = function () {
+         this.render();
+         this.createCircle();
+      }
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 revealOnScroll" data-animation="fadeInUp" data-timeout="400">
-                    <div class="engineer">
-                        <i class="fa fa-microchip fa-5x"></i>
-                        <p class="engineer-title">Electronics</p>
-                        <i class="fa fa-minus fa-2x"></i>
-                        <!-- <p class="engineer-text">I love to build things. I usually use microcontrollers like Arduino,
-                            Raspberry
-                            pi for my projects. I have also worked on ARM controllers.</p><br> -->
-                    </div>
-                </div>
-                <div class="col-sm-4 revealOnScroll" data-animation="fadeInUp" data-timeout="600">
-                    <div class="mobile">
-                        <i class="fa fa-code fa-5x"></i>
-                        <p class="mobile-title">Web/Mobile</p>
-                        <i class="fa fa-minus fa-2x"></i>
-                        <!-- <p class="mobile-text">I am an Android developer. I am currently creating an application which
-                            will
-                            be available on the Google Play store, and hope to add more soon.</p><br> -->
-                    </div>
-                </div>
-                <div class="col-sm-4 revealOnScroll" data-animation="fadeInUp" data-timeout="800">
-                    <div class="web">
-                        <i class="fa fa-database fa-5x"></i>
-                        <p class="web-title">Data</p>
-                        <i class="fa fa-minus fa-2x"></i>
-                        <!-- <p class="web-text">I develop web pages using HTML, CSS, and JavaScript. I am available for
-                            freelance,
-                            check my <a href="#projects">Portfolio</a> if you are interested.</p><br> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-    </div>
+      /**
+       * generates random number between min and max values
+       * @param  {number} min value
+       * @param  {number} max malue
+       * @return {number} random number between min and max
+       * @method _rand
+       */
+      Particles.prototype._rand = function (min, max) {
+         return Math.random() * (max - min) + min;
+      }
 
-    <!-- Skills Section -->
-    <div class="skill-container" id="skills">
-        <br>
-        <div class="container">
-            <div class=" zoomInDown">
-                <h1>My Skills</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="green-divider">
-            </div>
-            
-            <br>
+      /**
+       * Sets canvas size and updates values on resize
+       * @method render
+       */
+      Particles.prototype.render = function () {
+         var self = this,
+            wHeight = $(window).height(),
+            wWidth = $(window).width();
 
-            <div class="row">
+         self.canvas.width = wWidth;
+         self.canvas.height = wHeight;
 
-                <div class="col-md-6">
-                    <div class=' flipInY'>
-                        <h2>Languages</h2>
-                    </div>
-                    <div class="bars">
-                        <ul class="skills">
-                            <li>
-                                <span class="bar-expand python fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Python</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand javascript fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Javascript</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand c fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">C</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand php fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">PHP</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand java fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Java</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand htmlcss fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">HTML/CSS</span>
-                            </li>
-                            <!-- <li>
-<span class="bar-expand cplusplus fonts wow fadeInLeft" data-wow-delay="0.5s">C++</span>
-</li> -->
-                        </ul>
-                    </div>
-                    <br>
-                </div>
+         $(window).on('resize', self.render);
+      }
 
-                <div class="col-md-6">
-                    <div class=' flipInY'>
-                        <h2>Electronics</h2>
-                    </div>
-                    <div class="bars">
-                        <ul class="skills">
-                            <li>
-                                <span class="bar-expand arduino fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Arduino</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand raspberrypi fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Raspberry Pi</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand embeddedcircuit fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Embedded Circuit Design
-                                </span>
-                            </li>
-                            <li>
-                                <span class="bar-expand embeddedsystems fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Embedded Systems
-                                </span>
-                            </li>
-                            <li>
-                                <span class="bar-expand internetofthings fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Internet of Things
-                                </span>
-                            </li>
-                            <li>
-                                <span class="bar-expand servers fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">IBM Bluemix, AWS</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <br>
-                </div>
+      /**
+       * Randomly creates particle attributes
+       * @method createCircle
+       */
+      Particles.prototype.createCircle = function () {
+         var particle = [];
 
-                <div class=' flipInY'>
-                    <h2>Technologies</h2>
-                </div>
+         for (var i = 0; i < this.numParticles; i++) {
+            var self = this,
+               color = self.colors[~~(self._rand(0, self.colors.length))];
+            vy = self._rand(self.minSpeed, self.maxSpeed);
+            vx = self._rand(self.minSpeed, self.maxSpeed);
+            r = 1; //Math.sqrt(Math.sqr(vx)+Math.sqr(vy));
+            particle[i] = {
+               radius: r,
+               xPos: self._rand(0, canvas.width),
+               yPos: self._rand(0, canvas.height),
+               xVelocity: self._rand(self.minSpeed, self.maxSpeed),
+               yVelocity: vy,
+               color: 'rgba(' + color + ',' + self._rand(self.minOpacity, self.maxOpacity) + ')'
+            }
+
+            //once values are determined, draw particle on canvas
+            self.draw(particle, i);
+         }
+         //...and once drawn, animate the particle
+         self.animate(particle);
+      }
+
+      /**
+       * Draws particles on canvas
+       * @param  {array} Particle array from createCircle method
+       * @param  {number} i value from createCircle method
+       * @method draw
+       */
+      Particles.prototype.draw = function (particle, i) {
+         var self = this,
+            ctx = self.ctx;
+
+         if (self.blurry === true) {
+            //creates gradient if blurry === true
+            var grd = ctx.createRadialGradient(particle[i].xPos, particle[i].yPos, particle[i].radius, particle[i].xPos, particle[i].yPos, particle[i].radius / 1.25);
+
+            grd.addColorStop(1.000, particle[i].color);
+            grd.addColorStop(0.000, 'rgba(34, 34, 34, 0)');
+            ctx.fillStyle = grd;
+         } else {
+            //otherwise sets to solid color w/ opacity value
+            ctx.fillStyle = particle[i].color;
+         }
+
+         if (self.border === true) {
+            ctx.strokeStyle = '#fff';
+            ctx.stroke();
+         }
+
+         ctx.beginPath();
+         ctx.arc(particle[i].xPos, particle[i].yPos, particle[i].radius, 0, 2 * Math.PI, false);
+         ctx.fill();
+      }
+
+      /**
+       * Animates particles 
+       * @param  {array} particle value from createCircle & draw methods
+       * @method animate
+       */
+      Particles.prototype.animate = function (particle) {
+         var self = this,
+            ctx = self.ctx;
+
+         setInterval(function () {
+            //clears canvas
+            self.clearCanvas();
+            //then redraws particles in new positions based on velocity
+            for (var i = 0; i < self.numParticles; i++) {
+               particle[i].xPos += particle[i].xVelocity;
+               particle[i].yPos -= particle[i].yVelocity;
+
+               //if particle goes off screen call reset method to place it offscreen to the left/bottom
+               if (particle[i].xPos > self.canvas.width + particle[i].radius || particle[i].yPos > self.canvas.height + particle[i].radius) {
+                  self.resetParticle(particle, i);
+               } else {
+                  self.draw(particle, i);
+               }
+            }
+         }, 1000 / self.fps);
+      }
+
+      /**
+       * Resets position of particle when it goes off screen
+       * @param  {array} particle value from createCircle & draw methods
+       * @param  {number} i value from createCircle method
+       * @method resetParticle
+       */
+      Particles.prototype.resetParticle = function (particle, i) {
+         var self = this;
+
+         var random = self._rand(0, 1);
+
+         if (random > .5) {
+            // 50% chance particle comes from left side of window...
+            particle[i].xPos = -particle[i].radius;
+            particle[i].yPos = self._rand(0, canvas.height);
+         } else {
+            //... or bottom of window
+            particle[i].xPos = self._rand(0, canvas.width);
+            particle[i].yPos = canvas.height + particle[i].radius;
+         }
+         //redraw particle with new values
+         self.draw(particle, i);
+      }
+
+      /**
+       * Clears canvas between animation frames
+       * @method clearCanvas
+       */
+      Particles.prototype.clearCanvas = function () {
+         this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
 
 
-                <div class="col-md-6">
-
-                    <div class="bars">
-                        <ul class="skills">
-                            <li>
-                                <span class="bar-expand webapplicationdevelopment fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Web Application Development</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand androiddevelopment fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Android Development
-                                </span>
-                            </li>
-                            <li>
-                                <span class="bar-expand nativeapplicationdevelopment fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Native Application Development
-                                </span>
-                            </li>
-                            <!--<li>
-<span class="bar-expand chrome fonts revealOnScroll" data-animation="fadeInLeft" data-timeout="500">Chrome Extensions</span>
-</li>-->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bars">
-                        <ul class="skills">
-                            <li>
-                                <span class="bar-expand dataanalytics fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Data Analytics</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand datavisualization fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Visualitzation</span>
-                            </li>
-                            <li>
-                                <span class="bar-expand robotics fonts revealOnScroll" data-animation="fadeInLeft"
-                                    data-timeout="500">Robotics &amp; Git
-                                </span>
-                            </li>
-
-                            <!--<li>
-<span class="bar-expand django fonts revealOnScroll" data-animation="fadeInLeft" data-timeout="500">Django</span>
-</li>
-<li>
-<span class="bar-expand ios fonts revealOnScroll" data-animation="fadeInLeft" data-timeout="500">IOS SDK</span>
-</li> -->
-                        </ul>
-                    </div>
-                </div>
-                <br>
-                <br>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-    </div>
-
-    <!-- Experience Section -->
-    <div class="education-container" id="education">
-        <div class="container">
-            <br>
-            <div class=" zoomInDown">
-                <h1>Work Experience</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="yellow-divider">
-            </div>
-            <br>
-            <div style="text-align: center;" class=" fadeInDown">
-                <h3 style="font-size: 150%;" class="highschool"><span class="highschoolonly"></span><b>Ubisoft Entertainment Studios India Pvt Ltd.</b>
-                    [Test Engineer]
-                    <span class="academies"></span></h3>
-            </div>
-            <br>
-
-            <div class="row exCon">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Employee Productivity Tracker (PHP, MySQL,
-                        JavaScript, Bootstrap):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a Web based application to track
-                        productivity of Employees in the project by analysis.</p>
-                </div>
-                
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Daily Task Mail Deployer (PHP, JavaScript, MYSQL,
-                        Bootstrap):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a Web based application to send Daily task
-                        mails to employees in a project.</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Xbox Build Installer (Java, Xbox SDK):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a native windows application to Install
-                        builds and change settings on the Microsoft Xbox console.</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Task Tracker (PHP, MySQL):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a web-based application to track tasks
-                        performed by employees for Managers to track them easily.<br> Github - <a style="word-wrap: break-word;" target="_blank" href="https://github.com/aniketkatkar/tracker-">https://github.com/aniketkatkar/tracker-</a></p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Google Stadia Command Centre (Python):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a native windows application using Tkinter
-                        library in python and Google Stadia SDK to automate
-                        commands.</p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">GUI based Android Automation (Java, Android ADB):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a native windows application using AWT Java
-                        and Android ADB commands to perform automation on Android devices.
-                        Github - <a style="word-wrap: break-word;" target="_blank" href="https://github.com/aniketkatkar/Java_ADB_application">https://github.com/aniketkatkar/Java_ADB_application</a>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Ticket Resolving Application (PHP, MySQL,
-                        Bootstrap):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a web-based application for resolving
-                        tickets raised by testers to developers for a small project
-                        base in place of Jira.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Testcase Vault (PHP, MySQL):</p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a forum type application for testers to
-                        submit their testcases which are stored categorically and
-                        can be exported to Excel or XML.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Trainee Examination Centre (PHP, Bootstrap, MySQL):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed a fully scalable web-based application for
-                        examination of trainees as a replacement for Microsoft
-                        Forms and Excel.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Event Calendar
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">Developed an Event calendar to showcase deadlines of projects and any important events added by Management with automated Emails. 
-                    </p>
-                </div>
-            </div>
-            <br>
-            <br>
-
-            <div style="text-align: center;" class="fadeInDown">
-                <h3 style="font-size: 150%;" class="highschool"><span class="highschoolonly"></span><b> Ushva Clean Technology Pvt. Ltd.</b>(Senior
-                    Product Engineer)
-                    <span class="academies"></span></h3>
-            </div>
-            <br>
-
-            <div class="row exCon">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Intelligent Energy Management Systems (IEMS) (Embedded Systems, IOT,
-                        Arduino):</p>
-                    <br>
-                    <p class="description">Perform real time data analysis of Voltage, Current Readings, Packet Count,
-                        Timestamp and authentication
-                        parameters from Microcontroller TM4C 1294 (Product) to IBM Bluemix Server via ESP 12 using MQTT.
-                        Upgraded performance by integrating SD card support, one-time credentials for WIFI to IBM
-                        Bluemix servers
-                        (Cloudant NoSQL and Node Red)
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Smart Pole (Embedded Systems, Python, MySQL, IOT):</p>
-                    <br>
-                    <p class="description">Designed a solar powered smart pole which collects and analyses Air quality,
-                        Noise levels, Humidity samples
-                        using Raspberry pi and display in GUI (Python - Tkinter). Implemented IOT connectivity using IBM
-                        Bluemix and
-                        web application.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Battery monitoring system (Embedded Systems, MySQL, IOT):</p>
-                    <br>
-                    <p class="description">Transfer of Battery parameters like Voltage, battery status, percent
-                        charging, number of charging-discharging
-                        cycles to IBM Bluemix server and display analysis on a Android application designed for IEMS.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Monitoring device (Embedded Systems, Arduino, IOT):</p>
-                    <br>
-                    <p class="description">Designed a monitoring device (ESP32, GSM module) to read sensor values for
-                        IIOT applications to Web and
-                        Android applications for Data analysis.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Web Based Application (IEMS):</p>
-                    <br>
-                    <p class="description">Developed a web-based dashboard (PHP, MySQL) that displayed the data and
-                        statistics of the Intelligent
-                        energy management system through IBM Watson and IBM Cloudant.
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Android Application for (IEMS):</p>
-                    <br>
-                    <p class="description">Developed Android application for monitoring the data received from IBM
-                        servers. Plotted Realtime, daily,
-                        monthly, yearly graphs of various derivatives of energy of the Intelligent Energy Management
-                        Systems (IEMS).
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p class="project-title">Company Website (HTML, CSS, JS, Bootstrap):</p>
-                    <br>
-                    <p class="description">Came up with ideas after ideas to realize to design and develop the website. The main objective was to create a website that would suit the startups vision and mission i,e - "Dream - Energy Neutral" with <a style="word-wrap: break-word;" target="_blank" href="https://www.linkedin.com/in/saylighanekar/">Sayli Ghanekar</a>.
-                    </p>
-                </div>
-            </div>
-            <br>
-        </div>
-        <br>
-        <br>
-    </div>
-
-    <!-- Freelancing Section -->
-    <div class="project-container" id="projects">
-        <div class="container">
-            <br>
-            <div>
-                <h1>Freelancing</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="blue-divider">
-            </div>
-            <br>
-            <br>
-
-            <div class="row exCon">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Home automation (Embedded, IOT, Android):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Designed and implemented a scalable scenario to tackle parking problems in urban cities. Used sensors to detect cars in a parking lot and display it on an Android app through IBM Bluemix
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Smart Car Parking (Embedded, IOT, Android, Arduino):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Designed and implemented a basic home automation system using ESP8266 and GSM modules to control any application using an Android/Web application.
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Website Design and Development (PHP, JavaScript, HTML, CSS, Bootstrap):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Designed and developed front end applications for businesses, hotels and personal portfolios for individuals. 
-                        Eventswale | Hotel Royal Palace | Ushva | Shweta Salpe
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">IOT sensor modules (Arduino, MQTT, PHP, MySQL)
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Designed and implemented IOT sensor modules for gathering and analyzing information to generate data analysis and graphs for high level business intelligence.
-                        <br>
-                    </p>
-                </div>
-            </div>
-            
-            <br>
-            <br>
-        </div>
-    </div>
-
-    <!-- Extra Projects Section -->
-    <div class="project-container" id="extraprojects">
-        <div class="container">
-            <div>
-                <h1>Extra Projects</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="blue-divider">
-            </div>
-            <br>
-            <br>
-
-            <div class="row exCon">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Buzalert (Android):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Developed app for showing battery stats, theft alarm and battery alert alarms. (Live on Play store)<br>
-                        Download the app from Google Playstore - <a style="word-wrap: break-word;" target="_blank" href="https://play.google.com/store/apps/details?id=com.cynaze.buzalert&hl=en_IN">Buzalert</a>
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title"><a style="word-wrap: break-word;" target="_blank" href="http://curfew.xyz">Curfew.xyz</a> - BoredAF (Javascript, PHP, JSON):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        A project about things to do when you are Bored AF. Created because I was Bored AF. For people who are Bored AF. Along with Bored AF API to integrate in your application. Check it out at http://curfew.xyz <br>
-                        Github - <a style="word-wrap: break-word;" target="_blank" href="https://github.com/aniketkatkar/curfew.xyz">https://github.com/aniketkatkar/curfew.xyz</a>
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Segregation of Objects based on Shape and Color using MATLAB and Robotic Arm (MATLAB, Embedded Sys.):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        The project was based on the Image processing toolbox of MATLAB to recognize color and shape of any object place in front of a camera. A robotic arm was used to segregate the objects in their respective units.
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">CDAC – Linux USB device driver for reading data from GPIO port of Blue Board (Embedded Systems):
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        The main objective of this project was to implement Linux USB device driver of mass storage on host machine with bulk endpoint. Data read from the GPIO port is shown on the host machine terminal. A test application with GTK based GUI was written for testing.
-                        <br>
-                    </p>
-                </div>
-
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
-                    <p style="text-align:left" class="project-title">Control appliance remotely using HTTP via webserver and Android app
-                    </p>
-                    <br>
-                    <p style="text-align:left" class="description">
-                        Built a http server on a ESP32 and ESP8266 boards for controlling relays. The relay can be used to control any AC load connected to it. On the client side, an Android application as well as a webpage can be used to control any connected application.
-                        <br>
-                    </p>
-                </div>
-
-                
-            </div>
-            
-            <br>
-            <br>
-        </div>
-    </div>
-
-    <!-- Contact Me Section -->
-    <div class="contact-container" id="contact">
-        <br>
-        <br>
-        <div class="container">
-            <div class=" zoomInDown">
-                <h1>Contact Me</h1>
-            </div>
-            <div class="wow zoomIn fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-                <hr class="red-divider2">
-            </div>
-            <div class=" zoomIn">
-                <h3>Feel free to contact me if you want to get in touch, or just say <i>Hello</i>; email works best.
-                </h3>
-            </div>
-            <br>
-            <br>
-            <div class="social">
-                <div class="col-sm-2 col-xs-6">
-                    <a href="mailto:locked.ani@gmail.com" class="icon trigger">
-                        <span class="trigger_span">
-                            <i class="fa fa-envelope-o email1"></i>
-                            <i class="fa fa-envelope-o email2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>Email</h3>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-sm-2 col-xs-6">
-                    <a href="https://in.linkedin.com/in/aniket-katkar-1977ab96" target="_blank" class="icon trigger">
-                        <!-- <span class="trigger_span">
-<i class="fa fa-facebook facebook1"></i>
-<i class="fa fa-facebook facebook2"></i>
-</span> -->
-                        <span class="trigger_span">
-                            <i class="fa fa-linkedin linkedin1"></i>
-                            <i class="fa fa-linkedin linkedin2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>LinkedIn</h3>
-                    </div>
-                    <br>
-                    <br>
-
-                </div>
-                <div class="col-sm-2 col-xs-6">
-                    <a href="https://github.com/aniketkatkar" target="_blank" class="icon trigger">
-                        <span class="trigger_span">
-                            <i class="fa fa-github github1"></i>
-                            <i class="fa fa-github github2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>Github</h3>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-sm-2 col-xs-6">
-                    <a href="https://in.pinterest.com/aniketkatkar" target="_blank" class="icon trigger">
-                        <span class="trigger_span">
-                            <i class="fa fa-pinterest pinterest1"></i>
-                            <i class="fa fa-pinterest pinterest2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>Pinterest</h3>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-sm-2 col-xs-6">
-                    <a href="https://twitter.com/aniketkatkarz" target="_blank" class="icon trigger">
-                        <span class="trigger_span">
-                            <i class="fa fa-twitter twitter1"></i>
-                            <i class="fa fa-twitter twitter2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>Twitter</h3>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <!--<div class="col-sm-2 col-xs-6">
-<a href="https://play.google.com/store/apps/developer?id=Sagar+Garg" target="_blank" class="icon trigger">
-<span class="trigger_span">
-<i class="fa fa-android android1"></i>
-<i class="fa fa-android android2"></i>
-</span>
-</a>
-<div class="ch-info">
-<h3>Android</h3>
-</div>
-<br>
-<br>
-</div>-->
-                <div class="col-sm-2 col-xs-6">
-                    <a href="Aniket-Katkar-Resume.pdf" class="icon trigger" target="_blank">
-                        <span class="trigger_span">
-                            <i class="fa fa-file-o resume1"></i>
-                            <i class="fa fa-file-o resume2"></i>
-                        </span>
-                    </a>
-                    <div class="ch-info">
-                        <h3>Resume</h3>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-    </div>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-
-    <script src="js/three.min.js"></script>
-
-    <!-- Helpers -->
-    <script src="js/projector.js"></script>
-    <script src="js/canvas-renderer.js"></script>
-
-    <!-- Visualitzation adjustments -->
-    <script src="js/3d-lines-animation.js"></script>
-
-    <!-- Animated background color -->
-    <script src="js/color.js"></script>
-
-    <script>
-        new WOW().init();
-    </script>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                color: '#abab81',
-                shape: 'circle',
-                opacity: 1,
-                size: 2.5,
-                size_random: true,
-                nb: 100,
-                line_linked: {
-                    enable_auto: true,
-                    distance: 340,
-                    color: '#4f5b60',
-                    opacity: 0.5,
-                    width: 1,
-                    condensed_mode: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 600
-                    }
-                },
-                anim: {
-                    enable: true,
-                    speed: 1.5
-                }
-            },
-            interactivity: {
-                enable: true,
-                mouse: {
-                    distance: 100
-                },
-                detect_on: 'canvas',
-                mode: 'grab'
-            },
-            retina_detect: true
-        });
-    </script>
+      // go go go!
+      var particle = new Particles();
+      particle.init(); 
+   </script>
 </body>
 
 </html>
